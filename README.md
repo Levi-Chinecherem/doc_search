@@ -5,6 +5,11 @@
 
 Welcome to the Documentary Search project! 🎥 This is an archive of documentary projects where you can search for and explore various research topics. It's like a library for documentaries!
 
+
+## current admin user
+
+username: admin
+password: password123
 ## Features
 
 - 📚 Search for documentaries by title, author, and year
