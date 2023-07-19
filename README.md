@@ -1,7 +1,7 @@
 
 # Documentary Search Project
 
-![Documentary Search Logo](path/to/logo.png)
+![Documentary Search Logo](https://github.com/Levi-Chinecherem/doc_search/blob/master/sample.PNG)
 
 Welcome to the Documentary Search project! 🎥 This is an archive of documentary projects where you can search for and explore various research topics. It's like a library for documentaries!
 
