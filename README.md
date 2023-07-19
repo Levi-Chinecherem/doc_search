@@ -8,7 +8,7 @@ Welcome to the Documentary Search project! 🎥 This is an archive of documentar
 
 ## current admin user
 
-username: admin
+username: admin <br>
 password: password123
 ## Features
 
