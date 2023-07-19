@@ -1,0 +1,11 @@
+{% for documentary in documentaries %}
+    <li>
+        <h3>{{ documentary.title }}</h3>
+        <p>{{ documentary.description }}</p>
+        <p>Year: {{ documentary.year }}</p>
+        <p>Author: {{ documentary.author }}</p>
+        <a href="{% url 'documentary_details' documentary_id=documentary.id %}">View Details</a>
+    </li>
+{% empty %}
+    <li>No documentaries found.</li>
+{% endfor %}

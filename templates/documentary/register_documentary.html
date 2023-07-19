@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <h2>Register Documentary</h2>
+    <form id="documentary-form" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Register</button>
+    </form>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'documentary/js/register_documentary.js' %}"></script>
+{% endblock %}

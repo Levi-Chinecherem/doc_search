@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <h2>Documentaries</h2>
+
+    <form id="search-form" method="GET" action="{% url 'documentary_list' %}">
+        <input type="text" id="search-input" name="q" value="{{ query }}" placeholder="Search documentaries">
+        <button type="submit">Search</button>
+    </form>
+
+    <ul id="documentaries-list">
+        {% include 'documentary/documentary_list_ajax.html' %}
+    </ul>
+
+    <script src="{% static 'documentary/js/search.js' %}"></script>
+{% endblock %}
