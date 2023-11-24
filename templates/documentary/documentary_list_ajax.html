@@ -1,11 +1,25 @@
-{% for documentary in documentaries %}
-    <li>
-        <h3>{{ documentary.title }}</h3>
-        <p>{{ documentary.description }}</p>
-        <p>Year: {{ documentary.year }}</p>
-        <p>Author: {{ documentary.author }}</p>
-        <a href="{% url 'documentary_details' documentary_id=documentary.id %}">View Details</a>
-    </li>
-{% empty %}
-    <li>No documentaries found.</li>
-{% endfor %}
+<div class="container my-5">
+    <div class="row">
+        {% for documentary in documentaries %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">{{ documentary.title }}</h5>
+                    <p class="card-text">{{ documentary.description|truncatewords:15 }}</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Year: {{ documentary.year }}</small><br>
+                    <small class="text-muted">Author: {{ documentary.author }}</small>
+                </div>
+                <div class="card-body">
+                    <a href="{% url 'documentary_details' documentary_id=documentary.id %}" class="btn btn-primary btn-sm btn-block">View Details</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-md-12">
+            <p>No documentaries found.</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>

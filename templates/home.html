@@ -1,66 +1,99 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block style %}
+    .card {
+        border: none !important;
+        transition: box-shadow 0.3s ease-in-out;
+    }
+
+    .card:hover {
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    }
+{% endblock style %}
 
 {% block content %}
-    <h1>Welcome to Documentary Search</h1>
-    <p>
-        This is an archive of documentary projects where you can search for and explore various research topics.
-        Users can register and upload their own documentaries, and other users can search, like, comment, and share them.
-    </p>
-
-    <h2>Features</h2>
-    <ul>
-        <li>Search for documentaries by title, author, and year</li>
-        <li>Register and upload your own documentaries</li>
-        <li>View documentary details including likes, comments, and sharing</li>
-        <li>Like and comment on documentaries</li>
-        <li>Share documentaries with others</li>
-        <li>Responsive and user-friendly design</li>
-    </ul>
-
-    <h2>Getting Started</h2>
-    <p>To get started, you can:</p>
-    <ul>
-        <li>Login or create a new account</li>
-        <li>Browse the list of available documentaries</li>
-        <li>Search for specific topics or authors</li>
-        <li>View and interact with documentary details</li>
-        <li>Upload your own documentaries</li>
-    </ul>
-
-    <h2>About the Project</h2>
-    <ul>
-        <li><strong>Technologies Used:</strong>
-            <ul>
-                <li>Backend: Django</li>
-                <li>Frontend: HTML, CSS, JavaScript (jQuery)</li>
-                <li>Database: SQLite (can be extended to other databases supported by Django)</li>
-                <li>Authentication: Django-allauth (with support for Gmail and Facebook)</li>
-                <li>Documentary PDF Preview: PDF.js</li>
-                <li>File Uploads: Django default file handling</li>
-                <li>Ajax and jQuery for smooth interactions and real-time updates</li>
-            </ul>
-        </li>
-        <li><strong>Project Setup:</strong>
-            <ul>
-                <li>Clone the project from the repository</li>
-                <li>Create and activate a virtual environment</li>
-                <li>Install the required dependencies using `pip install -r requirements.txt`</li>
-                <li>Apply database migrations using `python manage.py migrate`</li>
-                <li>Create a superuser using `python manage.py createsuperuser`</li>
-                <li>Start the development server using `python manage.py runserver`</li>
-                <li>Access the project at `http://localhost:8000`</li>
-            </ul>
-        </li>
-        <li class="hidden"><strong>Contributors:</strong>
-            <ul>
-                <li>Levi Chinecherem Chidi (Software Developer)</li>
-                <li>Lambert God'stime</li>
-                <li>The User</li>
-            </ul>
-        </li>
-    </ul>
-
-    <p>
-        For more information, please visit our <a href="https://www.github.com/Levi-Chinecherem/doc_search" target="_blank">Documentaries</a> page.
-    </p>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h1 class="card-title">Welcome to Research Doc</h1>
+                        <p class="card-text">
+                            This is an archive of documentary projects where you can search for and explore various research topics.
+                            Users can register and upload their own documentaries, and other users can view their work and download them.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title">Features</h2>
+                        <ul class="card-text">
+                            <li>Search for documentaries by title, author, and year</li>
+                            <li>Register and upload your own documentaries</li>
+                            <li>View documentary details including likes, comments, and sharing</li>
+                            <li>Download Documentaries documentaries with others</li>
+                            <li>Responsive and user-friendly design</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title">Getting Started</h2>
+                        <ul class="card-text">
+                            <li>Login or create a new account</li>
+                            <li>Browse the list of available documentaries</li>
+                            <li>Search for specific topics or authors</li>
+                            <li>View and interact with documentary details</li>
+                            <li>Upload your own documentaries</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title">About the Project</h2>
+                        <ul class="card-text">
+                            <li><strong>Technologies Used:</strong>
+                                <ul>
+                                    <li>Backend: Django</li>
+                                    <li>Frontend: HTML, CSS, JavaScript (jQuery)</li>
+                                    <li>Database: SQLite (can be extended to other databases supported by Django)</li>
+                                    <li>Authentication: Django-allauth (with support for Gmail and Facebook)</li>
+                                    <li>Documentary PDF Preview: PDF.js</li>
+                                    <li>File Uploads: Django default file handling</li>
+                                    <li>Ajax and jQuery for smooth interactions and real-time updates</li>
+                                </ul>
+                            </li>
+                            <li><strong>Project Setup:</strong>
+                                <ul>
+                                    <li>Clone the project from the repository</li>
+                                    <li>Create and activate a virtual environment</li>
+                                    <li>Install the required dependencies using `pip install -r requirements.txt`</li>
+                                    <li>Apply database migrations using `python manage.py migrate`</li>
+                                    <li>Create a superuser using `python manage.py createsuperuser`</li>
+                                    <li>Start the development server using `python manage.py runserver`</li>
+                                    <li>Access the project at `http://localhost:8000`</li>
+                                </ul>
+                            </li>
+                            <li class="hidden"><strong>Contributors:</strong>
+                                <ul>
+                                    <li>Levi Chinecherem Chidi (Software Developer)</li>
+                                    <li>Lambert God'stime</li>
+                                    <li>The User</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <p class="card-text">
+                            For more information, please visit our <a href="https://www.github.com/Levi-Chinecherem/doc_search" target="_blank">Documentaries</a> page.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

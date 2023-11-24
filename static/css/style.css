@@ -58,6 +58,7 @@ body {
     cursor: pointer;
   }
   
+
   /* Documentary list styles */
   .documentary-list {
     list-style: none;
@@ -76,6 +77,51 @@ body {
   .documentary-list-item p {
     margin-bottom: 5px;
   }
+
+  /* Apply styles to the documentary items */
+.documentary-item {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+/* Style the documentary title */
+.documentary-item h3 {
+  font-size: 1.5em;
+  color: #333;
+  margin: 0;
+}
+
+/* Style the description */
+.documentary-item .description {
+  color: #666;
+}
+
+/* Style the year and author information */
+.documentary-item .year,
+.documentary-item .author {
+  font-style: italic;
+  color: #888;
+}
+
+/* Style the "View Details" link */
+.documentary-item .details-link {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #007BFF;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 3px;
+}
+
+/* Style for the "No documentaries found" message */
+p {
+  font-weight: bold;
+  color: #f00; /* Red color for emphasis */
+}
+
   
   /* Documentary details styles */
   .documentary-details {

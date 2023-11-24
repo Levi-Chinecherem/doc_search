@@ -1,26 +1,27 @@
-$(document).ready(function() {
-    $('#documentary-form').submit(function(event) {
-        event.preventDefault();
-        var form = $(this)[0];
-        var formData = new FormData(form);
+$(document).ready(function () {
+    // Function to update and show the modal with a message
+    function showModal(message, isSuccess) {
+        const resultModal = $('#resultModal'); // Moved inside the function for better scoping
+        const resultMessage = $('#resultMessage');
+        resultMessage.text(message);
 
-        $.ajax({
-            url: $(this).attr('action'),
-            type: $(this).attr('method'),
-            data: formData,
-            processData: false,
-            contentType: false,
-            success: function(response) {
-                if (response.success) {
-                    alert('Documentary registered successfully!');
-                    form.reset();
-                } else {
-                    alert('Failed to register the documentary.');
-                }
-            },
-            error: function(xhr, errmsg, err) {
-                console.log(errmsg);
-            }
-        });
-    });
+        if (isSuccess) {
+            resultMessage.removeClass('text-danger').addClass('text-success');
+        } else {
+            resultMessage.removeClass('text-success').addClass('text-danger');
+        }
+
+        resultModal.modal('show');
+    }
+
+    // Show the modal when the page loads if the modal has a message
+    const resultMessage = $('#resultMessage');
+    if (resultMessage.text().trim() !== '') {
+        showModal(resultMessage.text(), true); // Automatically show modal on page load
+    }
+
+    // Example: Trigger the modal when a new documentary is added
+    // You can call this function based on your specific use case
+    // For example, in your form submission AJAX callback.
+    // showModal('Documentary added successfully', true);
 });

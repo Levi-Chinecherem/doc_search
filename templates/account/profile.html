@@ -1,14 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h2>Profile</h2>
-    <p><strong>Username:</strong> {{ user.username }}</p>
-    <p><strong>Email:</strong> {{ user.email }}</p>
-    <!-- Add other user details here -->
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Profile</h2>
+                    <p class="card-text"><strong>Username:</strong> {{ user.username }}</p>
+                    <p class="card-text"><strong>Email:</strong> {{ user.email }}</p>
+                    <!-- Add other user details here -->
 
-    <p>
-        <a href="{% url 'account_change_password' %}">Change Password</a> |
-        <a href="{% url 'account_reset_password' %}">Reset Password</a> |
-        <a href="{% url 'account_logout' %}">Logout</a>
-    </p>
+                    <p class="card-text">
+                        <a href="{% url 'account_change_password' %}" class="btn btn-primary">Change Password</a>
+                        <a href="{% url 'account_reset_password' %}" class="btn btn-secondary">Reset Password</a>
+                        <a href="{% url 'account_logout' %}" class="btn btn-danger">Logout</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

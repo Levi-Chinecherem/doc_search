@@ -8,6 +8,9 @@ class Documentary(models.Model):
     year = models.IntegerField()
     pdf = models.FileField(upload_to='documents/')
 
+    class Meta:
+        ordering = ['-id']
+        
     def __str__(self):
         return self.title
 

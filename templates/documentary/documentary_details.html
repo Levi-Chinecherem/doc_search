@@ -10,14 +10,14 @@
     <p><a href="{{ documentary.pdf.url }}" target="_blank">Download PDF</a></p>
     <div id="pdf-container" style="height: 600px;"></div>
   </div>
-
+{% comment %} 
   <div class="comments-section">
     <h3>Comments</h3>
     <ul class="comments-list">
       {% for comment in comments %}
         <li class="comment-item">
           <h4>{{ comment.user }}</h4>
-          <p>{{ comment.content }}</p>
+          <p>{{ comment.content|safe }}</p>
           <button class="reply-btn" data-comment-id="{{ comment.id }}">Reply</button>
           <div class="comment-reply" id="reply-form-{{ comment.id }}" style="display: none;">
             <textarea class="reply-textarea" rows="3" cols="50" placeholder="Write a reply"></textarea>
@@ -42,7 +42,7 @@
       <textarea id="comment-textarea" rows="5" cols="50" placeholder="Write a comment"></textarea>
       <button id="submit-comment-btn">Submit Comment</button>
     </form>
-  </div>
+  </div> {% endcomment %}
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
